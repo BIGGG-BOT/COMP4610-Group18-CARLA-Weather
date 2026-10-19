@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "epochs": {
+    "clear": 50,
+    "rain": 50
+  },
+  "same_initial_parameters": true,
+  "original_checkpoint_unchanged": true,
+  "trained_backbone_changes_verified": true,
+  "delivered_weights_hashes_verified": true,
+  "six_test_results_two_classes": true,
+  "report_images_decoded_and_visually_reviewed": true,
+  "gains_percentage_points": {
+    "clear": 14.616588227078326,
+    "rain": 23.452124991854863
+  },
+  "model_sha256": {
+    "clear": "26086b543d34c6d12be335dc7ee9da35136d9d8c7ffeea36a6257144bf4ad664",
+    "rain": "ba25096c3cc967d06494252067cf9d8fc8ab08a619694443baa4e131a143270d"
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "seed": 20261016,
+  "map": "Carla/Maps/Town02",
+  "names": {
+    "0": "vehicle",
+    "1": "pedestrian"
+  },
+  "split_roads": {
+    "test": [
+      14,
+      8,
+      7
+    ],
+    "val": [
+      12,
+      0,
+      13
+    ],
+    "train": [
+      18,
+      5,
+      16,
+      11,
+      1,
+      4,
+      9,
+      19,
+      10,
+      15,
+      6
+    ]
+  },
+  "groups": [
+    {
+      "road_id": 14,
+      "spawn_index": 11,
+      "split": "test"
+    },
+    {
+      "road_id": 8,
+      "spawn_index": 79,
+      "split": "test"
+    },
+    {
+      "road_id": 7,
+      "spawn_index": 71,
+      "split": "test"
+    },
+    {
+      "road_id": 12,
+      "spawn_index": 22,
+      "split": "val"
+    },
+    {
+      "road_id": 0,
+      "spawn_index": 2,
+      "split": "val"
+    },
+    {
+      "road_id": 13,
+      "spawn_index": 8,
+      "split": "val"
+    },
+    {
+      "road_id": 18,
+      "spawn_index": 43,
+      "split": "train"
+    },
+    {
+      "road_id": 5,
+      "spawn_index": 84,
+      "split": "train"
+    },
+    {
+      "road_id": 16,
+      "spawn_index": 31,
+      "split": "train"
+    },
+    {
+      "road_id": 11,
+      "spawn_index": 44,
+      "split": "train"
+    },
+    {
+      "road_id": 1,
+      "spawn_index": 89,
+      "split": "train"
+    },
+    {
+      "road_id": 4,
+      "spawn_index": 66,
+      "split": "train"
+    },
+    {
+      "road_id": 9,
+      "spawn_index": 80,
+      "split": "train"
+    },
+    {
+      "road_id": 19,
+      "spawn_index": 92,
+      "split": "train"
+    },
+    {
+      "road_id": 10,
+      "spawn_index": 48,
+      "split": "train"
+    },
+    {
+      "road_id": 15,
+      "spawn_index": 17,
+      "split": "train"
+    },
+    {
+      "road_id": 6,
+      "spawn_index": 69,
+      "split": "train"
+    },
+    {
+      "road_id": 14,
+      "spawn_index": 10,
+      "split": "test"
+    },
+    {
+      "road_id": 8,
+      "spawn_index": 77,
+      "split": "test"
+    },
+    {
+      "road_id": 7,
+      "spawn_index": 72,
+      "split": "test"
+    },
+    {
+      "road_id": 12,
+      "spawn_index": 29,
+      "split": "val"
+    },
+    {
+      "road_id": 0,
+      "spawn_index": 24,
+      "split": "val"
+    },
+    {
+      "road_id": 13,
+      "spawn_index": 7,
+      "split": "val"
+    },
+    {
+      "road_id": 18,
+      "spawn_index": 42,
+      "split": "train"
+    },
+    {
+      "road_id": 5,
+      "spawn_index": 55,
+      "split": "train"
+    },
+    {
+      "road_id": 16,
+      "spawn_index": 30,
+      "split": "train"
+    },
+    {
+      "road_id": 11,
+      "spawn_index": 51,
+      "split": "train"
+    },
+    {
+      "road_id": 1,
+      "spawn_index": 5,
+      "split": "train"
+    },
+    {
+      "road_id": 4,
+      "spawn_index": 64,
+      "split": "train"
+    },
+    {
+      "road_id": 9,
+      "spawn_index": 81,
+      "split": "train"
+    },
+    {
+      "road_id": 19,
+      "spawn_index": 40,
+      "split": "train"
+    },
+    {
+      "road_id": 10,
+      "spawn_index": 53,
+      "split": "train"
+    },
+    {
+      "road_id": 15,
+      "spawn_index": 16,
+      "split": "train"
+    },
+    {
+      "road_id": 6,
+      "spawn_index": 58,
+      "split": "train"
+    },
+    {
+      "road_id": 8,
+      "spawn_index": 76,
+      "split": "test"
+    },
+    {
+      "road_id": 7,
+      "spawn_index": 74,
+      "split": "test"
+    },
+    {
+      "road_id": 12,
+      "spawn_index": 26,
+      "split": "val"
+    },
+    {
+      "road_id": 0,
+      "spawn_index": 98,
+      "split": "val"
+    },
+    {
+      "road_id": 13,
+      "spawn_index": 95,
+      "split": "val"
+    },
+    {
+      "road_id": 18,
+      "spawn_index": 41,
+      "split": "train"
+    },
+    {
+      "road_id": 5,
+      "spawn_index": 63,
+      "split": "train"
+    },
+    {
+      "road_id": 11,
+      "spawn_index": 50,
+      "split": "train"
+    },
+    {
+      "road_id": 1,
+      "spawn_index": 4,
+      "split": "train"
+    },
+    {
+      "road_id": 4,
+      "spawn_index": 65,
+      "split": "train"
+    },
+    {
+      "road_id": 9,
+      "spawn_index": 82,
+      "split": "train"
+    },
+    {
+      "road_id": 19,
+      "spawn_index": 34,
+      "split": "train"
+    },
+    {
+      "road_id": 10,
+      "spawn_index": 47,
+      "split": "train"
+    },
+    {
+      "road_id": 15,
+      "spawn_index": 12,
+      "split": "train"
+    },
+    {
+      "road_id": 6,
+      "spawn_index": 59,
+      "split": "train"
+    },
+    {
+      "road_id": 8,
+      "spawn_index": 75,
+      "split": "test"
+    },
+    {
+      "road_id": 7,
+      "spawn_index": 73,
+      "split": "test"
+    },
+    {
+      "road_id": 12,
+      "spawn_index": 19,
+      "split": "val"
+    },
+    {
+      "road_id": 0,
+      "spawn_index": 3,
+      "split": "val"
+    },
+    {
+      "road_id": 13,
+      "spawn_index": 9,
+      "split": "val"
+    },
+    {
+      "road_id": 5,
+      "spawn_index": 61,
+      "split": "train"
+    },
+    {
+      "road_id": 11,
+      "spawn_index": 90,
+      "split": "train"
+    },
+    {
+      "road_id": 1,
+      "spawn_index": 67,
+      "split": "train"
+    },
+    {
+      "road_id": 4,
+      "spawn_index": 68,
+      "split": "train"
+    },
+    {
+      "road_id": 9,
+      "spawn_index": 83,
+      "split": "train"
+    },
+    {
+      "road_id": 19,
+      "spawn_index": 36,
+      "split": "train"
+    }
+  ],
+  "frames_per_group": 10,
+  "camera": {
+    "width": 800,
+    "height": 450,
+    "fov": 90,
+    "height_m": 2.4
+  },
+  "labels": "Visible instance-mask bounding boxes, simulator ground truth, not YOLO predictions",
+  "weather": {
+    "clear": "ClearNoon",
+    "rain": "HardRainNoon"
+  },
+  "limitation": "Small static-scene synthetic pilot, road-group holdout within Town02; not real-world validation",
+  "source_checkpoint_sha256": "308f1508b149b63e3b48adfabd36fc60a6b9ad30df4c5fdc21135f1188552f96",
+  "collector_sha256": "c1f72f7e89ea5c8aaa7e846a729c44fd17c398da9f0cd57a372786046eb3546a",
+  "carla_version": "0.9.15"
+}

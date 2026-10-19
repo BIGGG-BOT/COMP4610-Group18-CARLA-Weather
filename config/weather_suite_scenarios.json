@@ -1,0 +1,44 @@
+{
+  "purpose": "Predefined paired pilot; same road, five crossing parameter configurations. No outcome-driven tuning.",
+  "weather": [
+    "ClearNoon",
+    "HardRainNoon"
+  ],
+  "scenarios": [
+    {
+      "id": "S01",
+      "name": "Reference crossing",
+      "walker_speed_m_s": 1.0,
+      "trigger_remaining_m": 22.0,
+      "direction": 1
+    },
+    {
+      "id": "S02",
+      "name": "Slower pedestrian",
+      "walker_speed_m_s": 0.7,
+      "trigger_remaining_m": 22.0,
+      "direction": 1
+    },
+    {
+      "id": "S03",
+      "name": "Faster pedestrian",
+      "walker_speed_m_s": 1.4,
+      "trigger_remaining_m": 22.0,
+      "direction": 1
+    },
+    {
+      "id": "S04",
+      "name": "Later crossing trigger",
+      "walker_speed_m_s": 1.0,
+      "trigger_remaining_m": 12.0,
+      "direction": 1
+    },
+    {
+      "id": "S05",
+      "name": "Opposite crossing direction",
+      "walker_speed_m_s": 1.0,
+      "trigger_remaining_m": 22.0,
+      "direction": -1
+    }
+  ]
+}

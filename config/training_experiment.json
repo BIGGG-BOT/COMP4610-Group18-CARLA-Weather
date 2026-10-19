@@ -1,0 +1,370 @@
+{
+  "status": "complete",
+  "started": "2026-10-16T22:24:08.478934",
+  "source_model": "third-party checkpoint not included; see MODEL_SOURCE.md",
+  "source_sha256": "308f1508b149b63e3b48adfabd36fc60a6b9ad30df4c5fdc21135f1188552f96",
+  "dataset": "full dataset not included; see DATASET.md",
+  "dataset_audit": {
+    "status": "passed",
+    "images": 1200,
+    "pairs": 600,
+    "images_by_split": {
+      "clear/test": 100,
+      "rain/test": 100,
+      "rain/val": 120,
+      "clear/val": 120,
+      "clear/train": 380,
+      "rain/train": 380
+    },
+    "boxes_by_class": {
+      "clear/test/1": 477,
+      "clear/test/0": 239,
+      "rain/test/1": 477,
+      "rain/test/0": 239,
+      "rain/val/1": 529,
+      "rain/val/0": 235,
+      "clear/val/1": 529,
+      "clear/val/0": 235,
+      "clear/train/1": 1634,
+      "clear/train/0": 595,
+      "rain/train/1": 1633,
+      "rain/train/0": 596
+    },
+    "roads_by_split": {
+      "test": [
+        7,
+        8,
+        14
+      ],
+      "val": [
+        0,
+        12,
+        13
+      ],
+      "train": [
+        1,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        15,
+        16,
+        18,
+        19
+      ]
+    },
+    "manifest_sha256": "d34d48ba1dc1415f8ab33e3c4f9162576a2d7aaa7f6de574bc5121289f4e13d8",
+    "design_sha256": "da26dccbd7742ed839a851bcf3b42d061ac0ea7a4436252546151f64fc56bf96",
+    "checks": [
+      "all image and label hashes",
+      "image decode",
+      "label bounds",
+      "both classes in every split",
+      "road and group split isolation",
+      "no exact duplicate images across splits",
+      "paired camera poses and weather readback"
+    ],
+    "note": "Road holdout within one map, not proof of geographical independence or real-world generalisation."
+  },
+  "training_config": {
+    "epochs": 50,
+    "patience": 0,
+    "imgsz": 640,
+    "batch": 8,
+    "workers": 0,
+    "device": 0,
+    "cache": false,
+    "amp": true,
+    "seed": 18,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0005,
+    "lrf": 0.1,
+    "warmup_epochs": 3,
+    "weight_decay": 0.0005,
+    "cos_lr": true,
+    "mosaic": 0.2,
+    "close_mosaic": 10,
+    "scale": 0.2,
+    "translate": 0.05,
+    "fliplr": 0.5,
+    "hsv_h": 0.015,
+    "hsv_s": 0.2,
+    "hsv_v": 0.1,
+    "mixup": 0.0,
+    "copy_paste": 0.0,
+    "save": true,
+    "save_period": 10,
+    "plots": true,
+    "verbose": false
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "design": "Independent clear-only and rain-only fine-tuning from the same third-party YOLO11n checkpoint.",
+  "class_scope": "vehicle and pedestrian; 4-class pretrained detector transferred into a 2-class head",
+  "selection": "best.pt selected on each training weather validation split; both models tested on both weather test splits",
+  "limitations": [
+    "synthetic static scenes",
+    "one map with held-out road IDs",
+    "visible-mask boxes",
+    "no trained driving controller",
+    "no claim of improved closed-loop driving",
+    "not a clear-versus-clear-plus-rain augmentation experiment",
+    "upstream pretraining data overlap with Town02 is unknown; holdout applies to this fine-tuning dataset"
+  ],
+  "runs": {
+    "clear": {
+      "epochs_completed": 50,
+      "elapsed_s": 634.4835474491119,
+      "run_directory": "training_runs/clear_50epochs",
+      "best": "clear_50epochs/weights/best.pt",
+      "last": "clear_50epochs/weights/last.pt",
+      "best_sha256": "26086b543d34c6d12be335dc7ee9da35136d9d8c7ffeea36a6257144bf4ad664",
+      "last_sha256": "26086b543d34c6d12be335dc7ee9da35136d9d8c7ffeea36a6257144bf4ad664",
+      "backbone_max_absolute_change": 0.047119140625,
+      "peak_gpu_allocated_gib": 1.1170053482055664,
+      "last_epoch_metrics": {
+        "epoch": "50",
+        "time": "612.811",
+        "train/box_loss": "0.8224",
+        "train/cls_loss": "0.51295",
+        "train/dfl_loss": "0.8255",
+        "metrics/precision(B)": "0.84809",
+        "metrics/recall(B)": "0.53161",
+        "metrics/mAP50(B)": "0.64416",
+        "metrics/mAP50-95(B)": "0.37107",
+        "val/box_loss": "1.40682",
+        "val/cls_loss": "0.90107",
+        "val/dfl_loss": "0.93163",
+        "lr/pg0": "5.0444e-05",
+        "lr/pg1": "5.0444e-05",
+        "lr/pg2": "5.0444e-05"
+      }
+    },
+    "rain": {
+      "epochs_completed": 50,
+      "elapsed_s": 660.2790057659149,
+      "run_directory": "training_runs/rain_50epochs",
+      "best": "rain_50epochs/weights/best.pt",
+      "last": "rain_50epochs/weights/last.pt",
+      "best_sha256": "ba25096c3cc967d06494252067cf9d8fc8ab08a619694443baa4e131a143270d",
+      "last_sha256": "bd43bad368a9ea99d743a01e1b3c0fbb249295bb3d00396a5fcb87906167aff2",
+      "backbone_max_absolute_change": 0.048095703125,
+      "peak_gpu_allocated_gib": 1.117131233215332,
+      "last_epoch_metrics": {
+        "epoch": "50",
+        "time": "650.706",
+        "train/box_loss": "0.92186",
+        "train/cls_loss": "0.5594",
+        "train/dfl_loss": "0.85383",
+        "metrics/precision(B)": "0.82421",
+        "metrics/recall(B)": "0.51566",
+        "metrics/mAP50(B)": "0.6225",
+        "metrics/mAP50-95(B)": "0.34237",
+        "val/box_loss": "1.4514",
+        "val/cls_loss": "0.90706",
+        "val/dfl_loss": "0.94281",
+        "lr/pg0": "5.0444e-05",
+        "lr/pg1": "5.0444e-05",
+        "lr/pg2": "5.0444e-05"
+      }
+    }
+  },
+  "test_results": [
+    {
+      "model": "original_pretrained",
+      "test_weather": "clear",
+      "precision": 0.7086299428146314,
+      "recall": 0.29542814121922345,
+      "mAP50": 0.45810587347948284,
+      "mAP50_95": 0.26348246325016716,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.5837226915407221,
+          "recall": 0.3389121338912134,
+          "AP50": 0.4612948946752775,
+          "AP50_95": 0.3043341725282039
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.8335371940885407,
+          "recall": 0.2519441485472335,
+          "AP50": 0.4549168522836882,
+          "AP50_95": 0.22263075397213053
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.24146795272827148,
+        "inference": 3.444385528564453,
+        "loss": 0.0,
+        "postprocess": 1.4158296585083008
+      }
+    },
+    {
+      "model": "original_pretrained",
+      "test_weather": "rain",
+      "precision": 0.3985416666666667,
+      "recall": 0.24603299913160182,
+      "mAP50": 0.3458846575219151,
+      "mAP50_95": 0.15921649851637631,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.4533333333333333,
+          "recall": 0.28451882845188287,
+          "AP50": 0.40554319823078916,
+          "AP50_95": 0.19604618722180078
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.34375,
+          "recall": 0.20754716981132076,
+          "AP50": 0.2862261168130411,
+          "AP50_95": 0.12238680981095185
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.3198051452636719,
+        "inference": 2.8483963012695312,
+        "loss": 0.0,
+        "postprocess": 1.4701104164123535
+      }
+    },
+    {
+      "model": "clear_finetuned",
+      "test_weather": "clear",
+      "precision": 0.8328439185597133,
+      "recall": 0.6001967694286685,
+      "mAP50": 0.6668605995455468,
+      "mAP50_95": 0.4096483455209504,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.8292177552656065,
+          "recall": 0.7071129707112971,
+          "AP50": 0.731523647976099,
+          "AP50_95": 0.4965336698915876
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.8364700818538201,
+          "recall": 0.49328056814604004,
+          "AP50": 0.6021975511149945,
+          "AP50_95": 0.3227630211503131
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.3072071075439453,
+        "inference": 2.836329936981201,
+        "loss": 0.005519390106201172,
+        "postprocess": 1.6969895362854004
+      }
+    },
+    {
+      "model": "clear_finetuned",
+      "test_weather": "rain",
+      "precision": 0.7988231341514666,
+      "recall": 0.36842012929484313,
+      "mAP50": 0.4690150070968615,
+      "mAP50_95": 0.24320725265215293,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.7392105052462239,
+          "recall": 0.5271966527196653,
+          "AP50": 0.5725391188149973,
+          "AP50_95": 0.3128876892364296
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.8584357630567092,
+          "recall": 0.20964360587002095,
+          "AP50": 0.3654908953787257,
+          "AP50_95": 0.17352681606787623
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.30522823333740234,
+        "inference": 2.8772950172424316,
+        "loss": 0.0,
+        "postprocess": 1.4347529411315918
+      }
+    },
+    {
+      "model": "rain_finetuned",
+      "test_weather": "clear",
+      "precision": 0.7319474888210257,
+      "recall": 0.5083904400889268,
+      "mAP50": 0.588220054486221,
+      "mAP50_95": 0.3155345312818141,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.9102065630976958,
+          "recall": 0.5513720751464071,
+          "AP50": 0.6931113831167381,
+          "AP50_95": 0.396193904917047
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.5536884145443556,
+          "recall": 0.46540880503144655,
+          "AP50": 0.48332872585570374,
+          "AP50_95": 0.2348751576465813
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.2975630760192871,
+        "inference": 2.8937530517578125,
+        "loss": 0.0,
+        "postprocess": 1.4104628562927246
+      }
+    },
+    {
+      "model": "rain_finetuned",
+      "test_weather": "rain",
+      "precision": 0.8085941285271253,
+      "recall": 0.6047576691966279,
+      "mAP50": 0.6653337849966827,
+      "mAP50_95": 0.39373774843492493,
+      "per_class": [
+        {
+          "class_id": 0,
+          "name": "vehicle",
+          "precision": 0.9040729322384673,
+          "recall": 0.7196652719665272,
+          "AP50": 0.7560122933139085,
+          "AP50_95": 0.49752454690726405
+        },
+        {
+          "class_id": 1,
+          "name": "pedestrian",
+          "precision": 0.7131153248157833,
+          "recall": 0.48985006642672857,
+          "AP50": 0.5746552766794568,
+          "AP50_95": 0.28995094996258597
+        }
+      ],
+      "speed_ms_per_image": {
+        "preprocess": 0.2997708320617676,
+        "inference": 2.958040237426758,
+        "loss": 0.0,
+        "postprocess": 1.4855003356933594
+      }
+    }
+  ],
+  "elapsed_s": 1315.9432089328766,
+  "finished": "2026-10-16T22:46:04.433556"
+}

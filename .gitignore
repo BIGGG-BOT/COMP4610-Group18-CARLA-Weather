@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Models and large generated data
+*.pt
+*.pth
+*.onnx
+datasets/
+training_runs/
+outputs/
+downloads/
+*.zip
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+~$*
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials.*
+secrets.*

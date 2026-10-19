@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "images": 1200,
+  "pairs": 600,
+  "images_by_split": {
+    "clear/test": 100,
+    "rain/test": 100,
+    "rain/val": 120,
+    "clear/val": 120,
+    "clear/train": 380,
+    "rain/train": 380
+  },
+  "boxes_by_class": {
+    "clear/test/1": 477,
+    "clear/test/0": 239,
+    "rain/test/1": 477,
+    "rain/test/0": 239,
+    "rain/val/1": 529,
+    "rain/val/0": 235,
+    "clear/val/1": 529,
+    "clear/val/0": 235,
+    "clear/train/1": 1634,
+    "clear/train/0": 595,
+    "rain/train/1": 1633,
+    "rain/train/0": 596
+  },
+  "roads_by_split": {
+    "test": [
+      7,
+      8,
+      14
+    ],
+    "val": [
+      0,
+      12,
+      13
+    ],
+    "train": [
+      1,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      15,
+      16,
+      18,
+      19
+    ]
+  },
+  "manifest_sha256": "d34d48ba1dc1415f8ab33e3c4f9162576a2d7aaa7f6de574bc5121289f4e13d8",
+  "design_sha256": "da26dccbd7742ed839a851bcf3b42d061ac0ea7a4436252546151f64fc56bf96",
+  "checks": [
+    "all image and label hashes",
+    "image decode",
+    "label bounds",
+    "both classes in every split",
+    "road and group split isolation",
+    "no exact duplicate images across splits",
+    "paired camera poses and weather readback"
+  ],
+  "note": "Road holdout within one map, not proof of geographical independence or real-world generalisation."
+}
